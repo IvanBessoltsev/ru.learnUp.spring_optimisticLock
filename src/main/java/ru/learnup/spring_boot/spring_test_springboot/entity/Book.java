@@ -28,27 +28,38 @@ public class Book {
     @Column(name = "price")
     private double price;
 
+    @Column(name = "stock_balance")
+    private double stockBalance;
+
+    @Version
+    private long version;
 
     public Book() {
     }
 
     @Override
     public String toString() {
-        return "\nBooks{" +
+        return "Book{" +
                 "bookID=" + bookID +
                 ", title='" + title + '\'' +
                 ", authorID=" + authorID +
                 ", yearOfRelease=" + yearOfRelease +
                 ", countPage=" + countPage +
                 ", price=" + price +
+                ", stockBalance=" + stockBalance +
                 '}';
     }
 
-    public Book(String title, int yearOfRelease, int countPage, double price) {
+    public Book(String title, int yearOfRelease, int countPage, double price, double stockBalance) {
         this.title = title;
         this.yearOfRelease = yearOfRelease;
         this.countPage = countPage;
         this.price = price;
+        this.stockBalance = stockBalance;
+    }
+
+    public void setBookID(int bookID) {
+        this.bookID = bookID;
     }
 
 
@@ -90,6 +101,18 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getBookID() {
+        return bookID;
+    }
+
+    public double getStockBalance() {
+        return stockBalance;
+    }
+
+    public void setStockBalance(double stockBalance) {
+        this.stockBalance = stockBalance;
     }
 }
 

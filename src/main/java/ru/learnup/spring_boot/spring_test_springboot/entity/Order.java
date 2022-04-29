@@ -35,5 +35,11 @@ public class Order {
         return client;
     }
 
+    public double getPurchaseAmount() {
+        return purchaseAmount;
+    }
 
+    public void setPurchaseAmount(double purchaseAmount) {
+        this.purchaseAmount = purchaseAmount;
+    }
 }
